@@ -1,0 +1,30 @@
+<h4>{{ leyend }}</h4>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      (click)="changeProgress(+5)"
+    >
+      +
+    </button>
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      (click)="changeProgress(-5)"
+    >
+      -
+    </button>
+  </div>
+  <input 
+    type="number"
+    class="form-control"
+    placeholder=""
+    aria-label=""
+    aria-describedby="basic-addon1"
+    [(ngModel)]="progress"
+    min="1"
+    max="100"
+    (viewToModelUpdate)="OnChange($event)"
+  />
+</div>

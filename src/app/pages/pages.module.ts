@@ -8,11 +8,11 @@ import { PagesComponent } from "./pages.component";
 
 //Modules
 import { SharedModule } from "../shared/shared.module";
-
 import { PagesRoutingModule } from "./pages-routing.module";
+import { ChartsModule } from "ng2-charts";
 
-//Temp
-import { BoosterComponent } from '../components/booster/booster.component';
+//Services
+import { BoosterComponent } from "../components/booster/booster.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +28,6 @@ import { BoosterComponent } from '../components/booster/booster.component';
     ProgressComponent,
     Graph1Component
   ],
-  imports: [PagesRoutingModule, SharedModule, FormsModule]
+  imports: [PagesRoutingModule, SharedModule, FormsModule, ChartsModule]
 })
 export class PagesModule {}

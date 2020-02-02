@@ -1,1 +1,67 @@
-<p>graph1 works!</p>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div>
+            <div class="chart">
+              <canvas
+                baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                [options]="pieChartOptions"
+                [plugins]="pieChartPlugins"
+                [colors]="pieChartColors"
+                [legend]="pieChartLegend"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            mat-button
+            mat-raised-button
+            class="btn btn-primary" 
+            (click)="pieChartLegend = !pieChartLegend"
+          >
+            Toggle Legend
+          </button>
+          <button
+            mat-button
+            mat-raised-button
+            class="btn btn-primary" 
+            (click)="changeLabels()"
+          >
+            Change Labels
+          </button>
+          <button
+            mat-button
+            mat-raised-button
+            class="btn btn-primary" 
+            (click)="addSlice()"
+          >
+            Add Slice
+          </button>
+          <button
+            mat-button
+            mat-raised-button
+            class="btn btn-primary" 
+            (click)="removeSlice()"
+          >
+            Remove Slice
+          </button>
+          <button
+            mat-button
+            mat-raised-button
+            class="btn btn-primary" 
+            (click)="changeLegendPosition()"
+          >
+            Change Legend Position
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

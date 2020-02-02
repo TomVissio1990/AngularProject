@@ -17,6 +17,8 @@
     </button>
   </div>
   <input 
+   #txtProgress
+    name="progress"
     type="number"
     class="form-control"
     placeholder=""
@@ -24,7 +26,7 @@
     aria-describedby="basic-addon1"
     [(ngModel)]="progress"
     min="1"
-    max="100"
-    (viewToModelUpdate)="OnChange($event)"
+    max="100"        
+    (change)="OnChange($event)"
   />
 </div>

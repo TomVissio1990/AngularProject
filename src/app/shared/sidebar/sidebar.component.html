@@ -20,31 +20,34 @@
   <!-- Heading -->
   <div class="sidebar-heading">
     Interface
-  </div>
-
+  </div> 
   <!-- Nav Item - Pages Collapse Menu -->
-  <li class="nav-item">
+  <li *ngFor="let menu of _sideBar.menu" class="nav-item">
     <a
       class="nav-link collapsed"
       href="#"
       data-toggle="collapse"
-      data-target="#collapseTwo"
+      attr.data-target="#collapse{{ menu.id }}"
       aria-expanded="true"
-      aria-controls="collapseTwo"
+      aria-controls=""
     >
-      <i class="fas fa-fw fa-cog"></i>
-      <span>Dashboard</span>
+      <i [class]="menu.icono"></i>
+      <span>{{ menu.titulo }}</span>
     </a>
     <div
-      id="collapseTwo"
+      id="collapse{{ menu.id }}"
       class="collapse"
-      aria-labelledby="headingTwo"
+      aria-labelledby="headingThree"
       data-parent="#accordionSidebar"
     >
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Custom Components:</h6>
-        <a class="collapse-item" href="buttons.html">Buttons</a>
-        <a class="collapse-item" href="cards.html">Cards</a>
+        <a
+          *ngFor="let subMenu of menu.submenu"
+          routerLink="/{{ subMenu.url }}"
+          routerLinkActive="active"
+          class="collapse-item"
+          >{{ subMenu.titulo }}</a
+        >
       </div>
     </div>
   </li>

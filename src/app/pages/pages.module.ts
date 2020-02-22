@@ -13,6 +13,8 @@ import { ChartsModule } from "ng2-charts";
 
 //Services
 import { BoosterComponent } from "../components/booster/booster.component";
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BoosterComponent } from "../components/booster/booster.component";
     DashboardComponent,
     ProgressComponent,
     Graph1Component,
-    BoosterComponent
+    BoosterComponent,
+    PromesasComponent,
+    RxjsComponent
   ],
   exports: [
     PagesComponent,

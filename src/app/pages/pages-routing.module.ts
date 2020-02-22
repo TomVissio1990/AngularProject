@@ -5,15 +5,19 @@ import { PagesComponent } from "./pages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProgressComponent } from "./progress/progress.component";
 import { Graph1Component } from "./graph1/graph1.component";
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const pagesRoutes: Routes = [
   {
     path: "",
     component: PagesComponent,
     children: [
-      { path: "dashboard", component: DashboardComponent },
-      { path: "progress", component: ProgressComponent },
-      { path: "graph1", component: Graph1Component },      
+      { path: "dashboard", component: DashboardComponent, data:{ title:"Dashboard" } },
+      { path: "progress", component: ProgressComponent, data:{ title:"Progress Bars" } },
+      { path: "graph1", component: Graph1Component, data:{ title:"Graphs" } },
+      { path: "promise", component: PromesasComponent, data:{ title:"Promise" } },
+      { path: "rxjs", component: RxjsComponent, data:{ title:"RxJs" } },
       { path: "", redirectTo: "/dashboard", pathMatch: "full" }
     ]
   }

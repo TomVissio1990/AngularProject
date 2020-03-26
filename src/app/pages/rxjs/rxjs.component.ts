@@ -42,7 +42,7 @@ export class RxjsComponent implements OnInit {
         } */
       }, 500);
     }).pipe(
-      map(res => {
+      map((res:any) => {
         return res.valor;
       }),
       filter((value, index) => {

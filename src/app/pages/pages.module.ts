@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProgressComponent } from "./progress/progress.component";
@@ -10,11 +11,13 @@ import { PagesComponent } from "./pages.component";
 import { SharedModule } from "../shared/shared.module";
 import { PagesRoutingModule } from "./pages-routing.module";
 import { ChartsModule } from "ng2-charts";
+import { PipesModule } from "../pipes/pipes.module";
 
 //Services
 import { BoosterComponent } from "../components/booster/booster.component";
-import { PromesasComponent } from './promesas/promesas.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { PromesasComponent } from "./promesas/promesas.component";
+import { RxjsComponent } from "./rxjs/rxjs.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     Graph1Component,
     BoosterComponent,
     PromesasComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   exports: [
     PagesComponent,
@@ -32,6 +36,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ProgressComponent,
     Graph1Component
   ],
-  imports: [PagesRoutingModule, SharedModule, FormsModule, ChartsModule]
+  imports: [
+    PagesRoutingModule,
+    SharedModule,
+    FormsModule,
+    ChartsModule,
+    PipesModule,
+    CommonModule
+  ]
 })
 export class PagesModule {}

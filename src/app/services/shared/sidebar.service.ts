@@ -10,6 +10,7 @@ export class SidebarService {
       titulo: "Principal",
       icono: "fas fa-fw fa-tachometer-alt",
       submenu: [
+        { titulo :'Profile',url:'/profile'},
         { titulo :'Dashboard',url:'/dashboard'},
         { titulo :'ProgressBar',url:'/progress'},
         { titulo :'Graph',url:'/graph1'},

@@ -1,0 +1,61 @@
+<div class="row animated--fade-in">
+  <div class="col-lg-6">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Profile</h6>
+      </div>
+      <div class="card-body">
+        <form ngNativeValidate #form="ngForm" (ngSubmit)="saveUser(form.value)">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputEmail4"><h5>User Name</h5></label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="User Name"
+                [ngModel] = "user.name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group col-md-12">
+              <label form="inputPassword4"><h5>Email</h5></label>
+              <input
+                type="Email"
+                class="form-control"
+                id="inputPassword4"
+                placeholder="Email"
+                [ngModel] = "user.email"
+                [disabled]="user.google"
+                name="email"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-dark ml-2">cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Image</h6>
+      </div>
+      <div class="card-body">
+        <div class="text-center">
+          <img *ngIf="!tempImg" [src]="user.img | image" class="card-img" alt="" />
+          <img *ngIf="tempImg" [src]="tempImg" class="card-img" alt="" />
+        </div>
+        <div class="row mt-3">  
+          <input (change)="selectImage($event.target.files[0])" class="btn" type="file">   
+        </div>
+        <div class="row mt-3">
+          <button (click)="changeImg()" [disabled]="!imgUpload" type="submit" class="btn btn-primary btn-block">Update image</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,16 +16,13 @@ export class UploadFileService {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           if (xhr.status == 200) {
-            console.log("upload img");
             resolve(JSON.parse(xhr.response));
           } else {
-            console.log("fail upload img");
             reject(JSON.parse(xhr.response));
           }
         }
       };
       let url = URL_SERVICE + "/upload/" + type + "/" + id;
-      console.log(url);
 
       xhr.open("PUT", url, true);
       xhr.send(formData);

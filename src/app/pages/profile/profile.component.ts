@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "src/app/services/user/user.service";
 import { User } from "src/app/models/user.model";
-import swal from "sweetalert";
+import _swal from "sweetalert";
 import { read } from 'fs';
 
 @Component({
@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
       return;
     }
     if (file.type.indexOf("image") < 0) {
-      swal('Only Images','File must be an image','error');
+      _swal('Only Images','File must be an image','error');
       this.imgUpload = null;
       return;
     }

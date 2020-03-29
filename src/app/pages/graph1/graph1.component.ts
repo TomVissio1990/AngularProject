@@ -54,7 +54,6 @@ export class Graph1Component implements OnInit {
     event: MouseEvent;
     active: {}[];
   }): void {
-    console.log(event, active);
   }
 
   public chartHovered({
@@ -64,7 +63,6 @@ export class Graph1Component implements OnInit {
     event: MouseEvent;
     active: {}[];
   }): void {
-    console.log(event, active);
   }
 
   changeLabels() {

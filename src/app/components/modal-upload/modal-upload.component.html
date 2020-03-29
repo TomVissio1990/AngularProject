@@ -1,0 +1,62 @@
+<div
+  class="modal-background animated--fade-in"
+  [ngClass]="{ hidden:  _modalUploaddService.hidden === 'hidden' }"
+>
+  <div class="modal" style="display:block;" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button
+            (click)="hideModal()"
+            type="button"
+            class="close"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <img
+              *ngIf="!tempImg"
+              [src]="xxx | image"
+              class="card-img"
+              alt=""
+              style="width: 10em; height: 10em;"
+            />
+            <img
+              *ngIf="tempImg"
+              [src]="tempImg"
+              class="card-img"
+              alt=""
+              style="width: 10em; height: 10em;"
+            />
+          </div>
+          <input
+            (change)="selectImage($event.target.files[0])"
+            class="btn"
+            type="file"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            [disabled]="!tempImg"
+            (click)="uploadImg()"
+            type="button"
+            class="btn btn-primary"
+          >
+            Upload image
+          </button>
+          <button
+            (click)="hideModal()"
+            type="button"
+            class="btn btn-secondary"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

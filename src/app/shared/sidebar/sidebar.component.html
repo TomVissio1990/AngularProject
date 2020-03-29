@@ -31,8 +31,8 @@
       aria-expanded="true"
       aria-controls=""
     >
-      <i [class]="menu.icono"></i>
-      <span>{{ menu.titulo }}</span>
+      <i [class]="menu.icon"></i>
+      <span>{{ menu.title }}</span>
     </a>
     <div
       id="collapse{{ menu.id }}"
@@ -46,7 +46,7 @@
           routerLink="/{{ subMenu.url }}"
           routerLinkActive="active"
           class="collapse-item"
-          >{{ subMenu.titulo }}</a
+          >{{ subMenu.title }}</a
         >
       </div>
     </div>

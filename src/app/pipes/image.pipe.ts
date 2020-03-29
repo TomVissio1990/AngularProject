@@ -29,7 +29,6 @@ export class ImagePipe implements PipeTransform {
         url += "/doctor/" + img;
         break;
       default:
-        console.log("img not exist");
         url += "/user/x";
     }
     return url;

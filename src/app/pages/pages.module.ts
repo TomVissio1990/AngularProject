@@ -17,7 +17,9 @@ import { PipesModule } from "../pipes/pipes.module";
 import { BoosterComponent } from "../components/booster/booster.component";
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from "./profile/profile.component";
+import { UsersComponent } from "./users/users.component";
+import { ModalUploadComponent } from "../components/modal-upload/modal-upload.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProfileComponent } from './profile/profile.component';
     BoosterComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsersComponent,
+    ModalUploadComponent
   ],
   exports: [
     PagesComponent,
@@ -42,7 +46,7 @@ import { ProfileComponent } from './profile/profile.component';
     FormsModule,
     ChartsModule,
     PipesModule,
-    CommonModule
+    CommonModule    
   ]
 })
 export class PagesModule {}

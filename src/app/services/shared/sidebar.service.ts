@@ -7,15 +7,30 @@ export class SidebarService {
   menu: any = [
     {
       id:"123123asdklj",
-      titulo: "Principal",
-      icono: "fas fa-fw fa-tachometer-alt",
+      title: "Principal",
+      icon: "fas fa-fw fa-tachometer-alt",
       submenu: [
-        { titulo :'Profile',url:'/profile'},
-        { titulo :'Dashboard',url:'/dashboard'},
-        { titulo :'ProgressBar',url:'/progress'},
-        { titulo :'Graph',url:'/graph1'},
-        { titulo :'Promises',url:'/promise'},
-        { titulo :'RxJs',url:'/rxjs'}
+        { title :'Profile',url:'/profile'},
+        { title :'Dashboard',url:'/dashboard'},
+        { title :'ProgressBar',url:'/progress'},
+        { title :'Graph',url:'/graph1'},
+        { title :'Promises',url:'/promise'},
+        { title :'RxJs',url:'/rxjs'}
+      ]
+    },
+    {
+      title:'Maintenance ',
+      icon:'fas fa-fw fa-wrench',
+      submenu:[
+        {
+          title:'Users', url:'/users',
+        },
+        {
+          title:'Hospitals', url:'/hospitals',
+        },
+        {
+          title:'Doctors', url:'/doctors'
+        }
       ]
     }
   ];

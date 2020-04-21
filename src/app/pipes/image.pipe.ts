@@ -3,7 +3,7 @@ import { URL_SERVICE } from "../config/config";
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Pipe({
-  name: "image"
+  name: "image",
 })
 export class ImagePipe implements PipeTransform {
   constructor(private _sanitizer: DomSanitizer) {}
@@ -11,7 +11,7 @@ export class ImagePipe implements PipeTransform {
     let url = URL_SERVICE + "/img";
 
     if (!img) {
-      return url + "/user/x";
+      return url + "/" + tipo + "/x";
     }
 
     if (img.indexOf("https") >= 0) {

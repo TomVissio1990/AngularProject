@@ -80,8 +80,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  updateUser(user: User) {
-    console.log(user);
+  updateUser(user: User) {    
     this._userService.updateUser(user).subscribe();
   }
 }

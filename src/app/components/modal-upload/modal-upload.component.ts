@@ -13,7 +13,7 @@ export class ModalUploadComponent implements OnInit {
   tempImg: any;
   constructor(
     private _uploadFile: UploadFileService,
-    private _modalUploaddService: ModalUploadService
+    private _modalUploadService: ModalUploadService
   ) {}
 
   ngOnInit() {}
@@ -41,18 +41,19 @@ export class ModalUploadComponent implements OnInit {
     this.tempImg = null;
     this.imgUpload = null;
 
-    this._modalUploaddService.hideModal();
+    this._modalUploadService.hideModal();
   }
 
   uploadImg() {
+    console.log(this._modalUploadService.type)
     this._uploadFile
       .uploadFile(
         this.imgUpload,
-        this._modalUploaddService.type,
-        this._modalUploaddService.id
+        this._modalUploadService.type,
+        this._modalUploadService.id
       )
       .then(resp => {
-        this._modalUploaddService.notification.emit(resp);
+        this._modalUploadService.notification.emit(resp);
         this.hideModal();
       })
       .catch(err => {
